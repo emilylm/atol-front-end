@@ -1,0 +1,16 @@
+@if (isHomeRoute) {
+    <!-- Special case for the home page to display the banner with a flexible footer -->
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+} @else {
+    <div class="layout-container">
+        <app-header></app-header>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+    </div>
+}
+
+

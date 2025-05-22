@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 65px;
+}
+
+.content {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 15px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.data-pairs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flex-pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-pair .label {
+    flex: 0 0 30%;
+    text-align: left;
+    font-weight: bold;
+    padding-right: 15px;
+}
+.flex-pair .value {
+    flex: 0 0 70%;
+    text-align: left;
+}
+
+hr {
+    width: 100%;
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.table-wrapper {
+    width: 100%;
+}
+
+.table-header {
+    text-align: left;
+}
+
+.images-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.biosampleId-btn {
+    background-color: #F5F5F5;
+}

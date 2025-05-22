@@ -1,0 +1,48 @@
+<div id="genomeNotesModalId" tabindex="-1" role="dialog"
+     aria-labelledby="genomeNotesModal"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            @if (data.dialogType === 'genome_note') {
+                <div class="modal-header" style="text-align: center">
+                    <h1 class=" modal-heading card-title" style="margin-top:20px">
+                        Genome Notes
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    <mat-list role="list">
+                        @for (genome_note of data.genomeNotes; track genome_note.title) {
+                            <a mat-list-item role="listitem" href="{{genome_note.url}}">
+                                {{ genome_note.title }}
+                            </a>
+                        }
+                    </mat-list>
+                </div>
+            }
+            @else {
+                <div class="modal-header" style="text-align: center">
+                    <h1 class=" modal-heading" style="margin-top:20px">
+                        ToL QC links
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    <mat-list role="list">
+                        @for (tolqc_link of data.tolqcLinks; track tolqc_link) {
+                            <a mat-list-item role="listitem" href="{{tolqc_link}}">
+                                {{ tolqc_link }}
+                            </a>
+                        }
+                    </mat-list>
+                </div>
+            }
+            <div class="modal-footer">
+                <button mat-raised-button type="button" data-dismiss="modal"
+                        (click)="close()"
+                        style="margin-bottom:15px;margin-left: 471px">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
