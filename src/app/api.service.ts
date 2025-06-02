@@ -27,7 +27,9 @@ export class ApiService {
             'CBP',
             'ENDEMIXIT',
             'ERGA Community Genomes',
-            'ERGA Swiss node'
+            'ERGA Swiss node',
+            'ATOL',
+            'atol'
         ];
         const offset = pageIndex * pageSize;
         let url = `${environment.host}/api/${indexName}?limit=${pageSize}&offset=${offset}`;
@@ -57,7 +59,9 @@ export class ApiService {
                         }
                     }
                 } else if (filterValue[i].includes('_') && filterValue[i].startsWith('experimentType')) {
-                    filterItem = filterValue[i].replace('_', ':');
+                    // Extract the experiment type value after the underscore
+                    const experimentType = filterValue[i].split('_')[1];
+                    filterItem = `experiment.library_construction_protocol:${experimentType}`;
                 } else {
                     filterItem = `${currentClass}:${filterValue[i]}`;
                 }
@@ -97,7 +101,9 @@ export class ApiService {
             'CBP',
             'ENDEMIXIT',
             'ERGA Community Genomes',
-            'ERGA Swiss node'
+            'ERGA Swiss node',
+            'ATOL',
+            'atol'
         ];
 
         // phylogeny
@@ -156,9 +162,9 @@ export class ApiService {
                         filterValue: string[], index_name: string) {
 
         const sortActiveESField: { [index: string]: any } = {
-            'title': 'title.keyword',
-            'study_id': 'study_id.keyword',
-            'organism_name': 'organism_name.keyword'
+            'title': 'title',
+            'study_id': 'study_id',
+            'organism_name': 'organism_name'
         }
 
         const offset = pageIndex * pageSize;

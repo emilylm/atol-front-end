@@ -196,24 +196,6 @@ export class DataPortalComponent implements OnInit, AfterViewInit {
                     this.aggregations = data.aggregations;
                     console.log(this.aggregations)
 
-                    // symbionts
-                    this.symbiontsFilters = [];
-                    if (this.aggregations.symbionts_biosamples_status.buckets.length > 0) {
-                        this.symbiontsFilters = this.merge(this.symbiontsFilters,
-                            this.aggregations.symbionts_biosamples_status.buckets,
-                            'symbionts_biosamples_status');
-                    }
-                    if (this.aggregations.symbionts_raw_data_status.buckets.length > 0) {
-                        this.symbiontsFilters = this.merge(this.symbiontsFilters,
-                            this.aggregations.symbionts_raw_data_status.buckets,
-                            'symbionts_raw_data_status');
-                    }
-                    if (this.aggregations.symbionts_assemblies_status.buckets.length > 0) {
-                        this.symbiontsFilters = this.merge(this.symbiontsFilters,
-                            this.aggregations.symbionts_assemblies_status.buckets,
-                            'symbionts_assemblies_status');
-                    }
-
                     // experiment Type
                     this.experimentTypeFilters = [];
                     if (this.aggregations?.experiment.library_construction_protocol.buckets.length > 0) {
