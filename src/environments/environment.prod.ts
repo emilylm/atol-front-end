@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    cookieDomain: 'portal.erga-biodiversity.eu',
+    cookieDomain: 'portal.atol-biodiversity.eu',
     envName: 'prod',
-    host: 'https://portal.erga-biodiversity.eu'
+    host: 'https://portal.atol-biodiversity.eu'
 };
