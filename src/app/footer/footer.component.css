@@ -1,23 +1,17 @@
-.img-fluid {
-    max-width: 80% !important;
-}
-
-.img-fluid2 {
-    max-width: 90%;
-    margin-right: 30px;
+.footer-right {
+    margin-top: auto
 }
 
 .img-fluid3 {
-    max-width: 80% !important;
-    /*margin-left: 30px;*/
-    /*margin-right: 87% !important;*/
+    max-width: 50% !important;
+    margin-left: calc(100% - 250px);
     /*margin-top: 10px;*/
 }
 
 .img-fluid4 {
     max-width: 20% !important;
     max-height: 20% !important;
-    /*margin-right: 27% !important;*/
+    /*margin-right: auto !important;*/
 }
 
 mat-toolbar {
