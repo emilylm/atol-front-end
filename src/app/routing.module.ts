@@ -14,6 +14,15 @@ import {PhylogenyComponent} from "./phylogeny/phylogeny.component";
 import {OrganismDetailsComponent} from "./organism-details/organism-details.component";
 import {SpecimenDetailsComponent} from "./specimen-details/specimen-details.component";
 import {PublicationsComponent} from "./publications/publications.component";
+import { inject } from '@angular/core';
+import { Router } from '@angular/router';
+
+// Function to disable routes so we can still retain the code for future implementation (and minimise deferal from EBI source repository)
+const disabledRouteGuard = () => {
+  const router = inject(Router);
+  router.navigate(['/home']);
+  return false;
+};
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -39,7 +48,12 @@ export const routes: Routes = [
         component: StatusTrackingComponent,
         title: "Status Tracking"
     },
-    {path: 'phylogeny', component: PhylogenyComponent, title: "Phylogeny"},
+    {
+        path: 'phylogeny', 
+        component: PhylogenyComponent, 
+        title: "Phylogeny", 
+        canActivate: [() => disabledRouteGuard()]
+    },
     {path: 'about', component: AboutComponent, title: "About"},
     {
         path: 'api_documentation',
@@ -47,18 +61,26 @@ export const routes: Routes = [
         title: "Api Documentation"
     },
     {path: 'help', component: HelpComponent, title: "Help"},
-    {path: 'gis', component: SamplingMapComponent, title: "Sampling Map"},
     {
-        path: 'bulk-downloads', component: BulkDownloadsComponent
+        path: 'gis', 
+        component: SamplingMapComponent, 
+        title: "Sampling Map",
+        canActivate: [() => disabledRouteGuard()]
+    },
+    {
+        path: 'bulk-downloads', 
+        component: BulkDownloadsComponent
     },
     {
         path: 'dashboards',
         component: LookerDashboardsComponent,
-        title: "Dashboards"
+        title: "Dashboards",
+        canActivate: [() => disabledRouteGuard()]
     },
     {
         path: 'publications',
         component: PublicationsComponent,
-        title: "Publications"
+        title: "Publications",
+        canActivate: [() => disabledRouteGuard()]
     },
 ]
