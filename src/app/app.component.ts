@@ -39,10 +39,14 @@ export const cookieConfig: NgcCookieConsentConfig = {
         dismiss: 'Accept cookies',
 
         privacyPolicyLink: 'Privacy Notice',
-        privacyPolicyHref: '/assets/gdpr/erga_asg_gbdp_gdpr.pdf',
+        // TODO: Update this to point to the actual privacy policy
+        // privacyPolicyHref: '/assets/gdpr/erga_asg_gbdp_gdpr.pdf',
+        privacyPolicyHref: '/',
 
         tosLink: 'Terms of Use',
-        tosHref: '/assets/gdpr/terms_of_use.pdf',
+        // TODO: Update this to point to the actual terms of use
+        // tosHref: '/assets/gdpr/terms_of_use.pdf',
+        tosHref: '/',
     }
 };
 
