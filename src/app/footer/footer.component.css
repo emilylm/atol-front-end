@@ -1,22 +1,18 @@
-.footer-right {
-    margin-top: auto
+.australian-biocommons-logo {
+    max-height: 65px;
 }
 
-.img-fluid3 {
-    max-width: 50% !important;
-    margin-left: calc(100% - 250px);
-    /*margin-top: 10px;*/
-}
-
-.img-fluid4 {
-    max-width: 20% !important;
-    max-height: 20% !important;
-    /*margin-right: auto !important;*/
+.australian-bioplatforms-logo {
+    max-height: 100px;
+    vertical-align: middle;
 }
 
 mat-toolbar {
     height: 110px;
     overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 .navigation-items {
